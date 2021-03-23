@@ -12,7 +12,15 @@ app.get('/', rootCall)
 */
 
 app.get('/', (req, res) => {
-    res.send('I know how to open node!')
+    const fruit = {
+        product: 'apple',
+        price: 200
+    }
+    res.send(fruit);
+})
+
+app.get('/fruits/orange', (req, res) => {
+    res.send({ fruit: 'orange', quantity: 1000, price: 10000 });
 })
 
 app.listen(3000, () => console.log('Listening to port 3000'));
